@@ -1028,7 +1028,7 @@ local function main()
                 lsc = { controller = get_lsc_proxy() }
             end
 
-            if lsc == nil or reactors == nil
+            if lsc == nil or reactors == nil then
                 error("Lost reference to LSC or reactors components. Stopping.")
             end
 
