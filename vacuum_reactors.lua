@@ -1023,6 +1023,15 @@ local function main()
                 error("Insufficient computer energy. Stopping.")
             end
 
+            if lsc == nil then
+                -- Attempt to get lsc info again
+                lsc = { controller = get_lsc_proxy() }
+            end
+
+            if lsc == nil or reactors == nil
+                error("Lost reference to LSC or reactors components. Stopping.")
+            end
+
             tick_lsc(lsc, tick)
             tick_reactors(lsc, reactors, tick)
 
